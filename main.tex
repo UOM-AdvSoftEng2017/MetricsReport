@@ -26,6 +26,28 @@
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\usepackage{color}
+% listings package for colored code listings
+\usepackage[procnames]{listings}
+\definecolor{keywords}{RGB}{255,0,90}
+\definecolor{comments}{RGB}{0,0,113}
+\definecolor{seagreen}{rgb}{0.18, 0.55, 0.34}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{aliceblue}{rgb}{0.94, 0.97, 1.0}
+\lstset{language=Java,
+        backgroundcolor=\color{aliceblue},
+        basicstyle=\ttfamily\footnotesize,
+        breaklines=true,
+        extendedchars=true,
+        keywordstyle=\color{keywords},
+        commentstyle=\color{comments},
+        stringstyle=\color{alizarin},
+        showstringspaces=false,
+        identifierstyle=\color{seagreen},
+        procnamekeys={def,class}}
+
+
 % highly advised by biblatex's authors.
 \usepackage{csquotes}
 % and biblatex itself...
