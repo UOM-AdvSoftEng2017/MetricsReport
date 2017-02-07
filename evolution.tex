@@ -28,6 +28,13 @@ backend λειτουργικότητας, ήταν το μικρότερο τό�
 παράθυρα για τη διαχείριση των πελατών και των κρατήσεων που είχαν
 αναπτυχθεί κατά τη διάρκεια του sprint 2.
 
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{Project-LLOC-1.eps}
+\caption{Η μεταβολή των συνολικών λογικών γραμμών κώδικα (LLOC) στη διάρκεια της ανάπτυξης}
+\label{fig:projectLLOC}
+\end{figure}
+
 Τόσο κατά τη διάρκεια του sprint 2, αλλά και του sprint 3,
 υπήρξαν περιπτώσεις αρκετών διαδοχικών commits με τα οποία ο
 αριθμός των γραμμών κώδικα που προστέθηκε στο έργο δεν αυξήθηκε.
@@ -50,13 +57,6 @@ backend λειτουργικότητας, ήταν το μικρότερο τό�
 μέλη να συγχρονίζουν συχνά τις τοπικές τους διακλαδώσεις με τη
 διακλάδωση master, στην περίπτωση αυτή συνέβη κάτι τέτοιο.
 
-\begin{figure}
-\centering
-\includegraphics[width=1.0\textwidth]{Project-LLOC-1.eps}
-\caption{Η μεταβολή των συνολικών λογικών γραμμών κώδικα (LLOC) στη διάρκεια της ανάπτυξης}
-\label{fig:projectLLOC}
-\end{figure}
-
 \subsubsection{Clone Coverage (CC)}
 
 Στο σχήμα \ref{fig:projectCC} παρατηρούμε την εξέλιξη της μετρικής CC.
@@ -65,6 +65,13 @@ backend λειτουργικότητας, ήταν το μικρότερο τό�
 επίπεδο κλάσης και όπως θα αναλυθεί περαιτέρω στην ενότητα ανάλυσης των
 μετρικών ανά κλάση στο τέλος του sprint 1, είναι τελικά σε ένα βαθμό
 παραπλανητικό και τελικά δεν αποτελεί πρόβλημα.
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{Project-CC-1.eps}
+\caption{Η εξέλιξη της μετρικής CC στη διάρκεια της ανάπτυξης}
+\label{fig:projectCC}
+\end{figure}
 
 Η ακόλουθη πτώση των τιμών τις μετρικής στην αρχή του sprint 2 μέχρι
 και τη μέση περίπου αυτού, δεν οφείλεται στη συνειδητή αντιμετώπιση
@@ -91,13 +98,6 @@ sprint 3. Αυτό είναι σε ένα βαθμό αναμενόμενο, α�
 διακλάδωση master όπως αυτή περιγράφηκε αναλυτικότερα
 στην ενότητα \ref{section:projectLLOC}
 
-\begin{figure}
-\centering
-\includegraphics[width=1.0\textwidth]{Project-CC-1.eps}
-\caption{Η εξέλιξη της μετρικής CC στη διάρκεια της ανάπτυξης}
-\label{fig:projectCC}
-\end{figure}
-
 \subsubsection{McCabe’s Cyclomatic Complexity (McCC)}
 
 Η εξέλιξη της μέσης τιμής της μετρικής κυκλωματικής πολυπλοκότητας για
@@ -111,6 +111,14 @@ sprint 3. Αυτό είναι σε ένα βαθμό αναμενόμενο, α�
 υπάρχει σημαντική πτώση της καμπύλης της μετρικής McCC, στις οποίες
 παρουσιάζεται μείωση της συνολικής πολυπλοκότητας.
 
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{Project-McCC-1.eps}
+\caption{Η μεταβολή της μέσης τιμής της μετρικής κυκλωματικής
+	πολυπλοκότητας (McCC) στη διάρκεια της ανάπτυξης}
+\label{fig:projectMcCC}
+\end{figure}
+
 Η μέση τιμή της κυκλωματικής πολυπλοκότητας ακόμα και στο τέλος του
 sprint 3 αξιολογείται ως ικανοποιητική. Λόγω του ότι πρόκειται για τη
 μέση τιμή της μετρικής για τις κλάσεις, πιθανόν κάποιες κλάσεις να έχουν
@@ -122,14 +130,6 @@ sprint 3 αξιολογείται ως ικανοποιητική. Λόγω το
 διακλάδωση και την μετέπειτα συγχώνευση της διακλάδωσης στη διακλάδωση
 master όπως αυτή περιγράφηκε αναλυτικότερα στην ενότητα
 \ref{section:projectLLOC}.
-
-\begin{figure}
-\centering
-\includegraphics[width=1.0\textwidth]{Project-McCC-1.eps}
-\caption{Η μεταβολή της μέσης τιμής της μετρικής κυκλωματικής
-	πολυπλοκότητας (McCC) στη διάρκεια της ανάπτυξης}
-\label{fig:projectMcCC}
-\end{figure}
 
 \subsubsection{Lack of Cohesion in Methods 5 (LCOM5)}
 
@@ -143,6 +143,14 @@ master όπως αυτή περιγράφηκε αναλυτικότερα στ�
 σε χαμηλά επίπεδα, οπότε δεν αποτελούν σε αυτό το σημείο αντικείμενο
 ανησυχίας.
 
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{Project-LCOM5-1.eps}
+\caption{Η μεταβολή της μέσης τιμής της μετρικής έλλειψης συνοχής
+LCOM5 στη διάρκεια της ανάπτυξης}
+\label{fig:projectLCOM5}
+\end{figure}
+
 Γενικά δεν φαίνεται να καταστρατηγείται η αρχή της Μοναδικής
 Αρμοδιότητας. Παρατηρούμε μεγάλη σχετικά αύξηση της μετρικής προς το τέλος του
 sprint 3.
@@ -154,14 +162,6 @@ sprint 3.
 Αυτό θα διερευνηθεί περαιτέρω στην ενότητα
 \ref{section:sprint3LCOM5}.
 
-\begin{figure}
-\centering
-\includegraphics[width=1.0\textwidth]{Project-LCOM5-1.eps}
-\caption{Η μεταβολή της μέσης τιμής της μετρικής έλλειψης συνοχής
-LCOM5 στη διάρκεια της ανάπτυξης}
-\label{fig:projectLCOM5}
-\end{figure}
-
 \subsubsection{Coupling Between Object classes (CBO)}
 
 Στο σχήμα \ref{fig:projectCBO} εμφανίζεται η μεταβολή της μέσης τιμής της
@@ -170,6 +170,14 @@ LCOM5 στη διάρκεια της ανάπτυξης}
 (29 κλάσεις). Η καμπύλη αυξάνει και αυτό είναι αναμενόμενο, γιατί όσο
 προστίθενται κλάσεις, τόσο αυξάνεται και το πλήθος των συνολικών
 εξαρτήσεων του συστήματος.
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{Project-CBO-1.eps}
+\caption{Η μεταβολή της μέσης τιμής της μετρικής σύζευξης
+CBO στη διάρκεια της ανάπτυξης}
+\label{fig:projectCBO}
+\end{figure}
 
 Η απότομη βύθιση της τιμής της μετρικής κοντά στο 140ο commit, οφείλεται
 ακόμα μία φορά σε commit που έγινε σε μη ενημερωμένη διακλάδωση του
@@ -180,12 +188,4 @@ LCOM5 στη διάρκεια της ανάπτυξης}
 εξεταστεί στις ενότητες \ref{section:sprint1CBO},
 \ref{section:sprint2CBO} και \ref{section:sprint3CBO} αντίστοιχα για το
 τέλος των τριών sprint.
-
-\begin{figure}
-\centering
-\includegraphics[width=1.0\textwidth]{Project-CBO-1.eps}
-\caption{Η μεταβολή της μέσης τιμής της μετρικής σύζευξης
-CBO στη διάρκεια της ανάπτυξης}
-\label{fig:projectCBO}
-\end{figure}
 
