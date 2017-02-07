@@ -143,7 +143,7 @@ labels <- class$Name[class$Commit==132]
 vals <- class$LLOC[class$Commit==132]
 d<-data.frame(labels=labels,vals=vals)
 d<-d[with(d, order(-vals,labels)),]
-par(mai=c(0.9,1.7,0,0.2))
+par(mai=c(0.9,2.2,0,0.2))
 barplot(d$vals, horiz=TRUE, names.arg=d$labels, las=1, cex.names=0.8, col=c("#9BC4E2"), xlab="LLOC")
 ```
 
@@ -154,7 +154,7 @@ labels <- class$Name[class$Commit==132]
 vals <- class$CC[class$Commit==132]
 d<-data.frame(labels=labels,vals=vals)
 d<-d[with(d, order(-vals,labels)),]
-par(mai=c(0.9,1.7,0,0.2))
+par(mai=c(0.9,2.2,0,0.2))
 barplot(d$vals, horiz=TRUE, names.arg=d$labels, las=1, cex.names=0.8, col=c("#8FBC8F"), xlab="CC")
 ```
 
@@ -165,7 +165,7 @@ labels <- files$Name[files$Commit==132]
 vals <- files$McCC[files$Commit==132]
 d<-data.frame(labels=labels,vals=vals)
 d<-d[with(d, order(-vals,labels)),]
-par(mai=c(0.9,1.7,0,0.2))
+par(mai=c(0.9,2.2,0,0.2))
 barplot(d$vals, horiz=TRUE, names.arg=d$labels, las=1, cex.names=0.8, col=c("#E3A857"), xlab="McCC")
 ```
 
@@ -176,7 +176,7 @@ labels <- class$Name[class$Commit==132]
 vals <- class$LCOM5[class$Commit==132]
 d<-data.frame(labels=labels,vals=vals)
 d<-d[with(d, order(-vals,labels)),]
-par(mai=c(0.9,1.7,0,0.2))
+par(mai=c(0.9,2.2,0,0.2))
 barplot(d$vals, horiz=TRUE, names.arg=d$labels, las=1, cex.names=0.8, col=c("#967BB6"), xlab="LCOM5")
 ```
 
@@ -187,7 +187,7 @@ labels <- class$Name[class$Commit==132]
 vals <- class$CBO[class$Commit==132]
 d<-data.frame(labels=labels,vals=vals)
 d<-d[with(d, order(-vals,labels)),]
-par(mai=c(0.9,1.7,0,0.2))
+par(mai=c(0.9,2.2,0,0.2))
 barplot(d$vals, horiz=TRUE, names.arg=d$labels, las=1, cex.names=0.8, col=c("#FFC1CC"), xlab="CBO")
 ```
 
