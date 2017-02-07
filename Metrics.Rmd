@@ -1,0 +1,247 @@
+---
+title: "Metrics"
+author: "George Vlahavas"
+date: "29 Ιανουαρίου 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(dpi=300)
+knitr::opts_chunk$set(fig.path = "figs/")
+knitr::opts_chunk$set(dev=c('png','postscript'))
+
+class <- read.csv("Class.csv")
+files <- read.csv("File.csv")
+pkg <- read.csv("Package.csv")
+
+colorLLOC<-"#007FFF"
+
+```
+
+### LLOC
+
+```{r Project-LLOC, echo=FALSE}
+plot(pkg$Commit, pkg$LLOC, type="l", col="#007FFF", lwd=2, xlab="Commit", ylab="LLOC (total)")
+abline(v=39, col="grey") # sprint 1 end
+abline(v=132, col="grey") # sprint 2 end
+text(x=17, y=3500, "sprint 1")
+text(x=85, y=3500, "sprint 2")
+text(x=170, y=3500, "sprint 3")
+```
+
+### CC
+
+```{r Project-CC, echo=FALSE}
+plot(pkg$Commit, pkg$CC, type="l", col="#006B3C", lwd=2, xlab="Commit", ylab="CC")
+abline(v=39, col="grey") # sprint 1 end
+abline(v=132, col="grey") # sprint 2 end
+text(x=17, y=0.46, "sprint 1")
+text(x=85, y=0.46, "sprint 2")
+text(x=170, y=0.46, "sprint 3")
+```
+
+### McCC
+
+```{r Project-McCC, echo=FALSE}
+avgMcCC <- tapply(files$McCC, files$Commit, FUN=mean)
+plot(avgMcCC, type="l", col="#CC5500", lwd=2, xlab="Commit", ylab="McCC (average)", ylim=c(0.8,9))
+abline(v=39, col="grey") # sprint 1 end
+abline(v=132, col="grey") # sprint 2 end
+text(x=17, y=8.7, "sprint 1")
+text(x=85, y=8.7, "sprint 2")
+text(x=170, y=8.7, "sprint 3")
+```
+
+### LCOM5
+
+```{r Project-LCOM5, echo=FALSE}
+avgLCOM5 <- tapply(class$LCOM5, class$Commit, FUN=mean)
+plot(avgLCOM5, type="l", col="#6F00FF", lwd=2, xlab="Commit", ylab="LCOM5 (average)", ylim=c(0,2.5))
+abline(v=39, col="grey") # sprint 1 end
+abline(v=132, col="grey") # sprint 2 end
+text(x=17, y=2.4, "sprint 1")
+text(x=85, y=2.4, "sprint 2")
+text(x=170, y=2.4, "sprint 3")
+```
+
+### CBO
+
+```{r Project-CBO, echo=FALSE}
+avgCBO <- tapply(class$CBO, class$Commit, FUN=mean)
+plot(avgCBO, type="l", col="#B53389", lwd=2, xlab="Commit", ylab="CBO (average)", ylim=c(0,5))
+abline(v=39, col="grey") # sprint 1 end
+abline(v=132, col="grey") # sprint 2 end
+text(x=17, y=4.8, "sprint 1")
+text(x=85, y=4.8, "sprint 2")
+text(x=170, y=4.8, "sprint 3")
+```
+
+## Sprint 1
+
+### LLOC
+
+```{r Sprint1-LLOC, echo=FALSE}
+labels <- class$Name[class$Commit==39]
+vals <- class$LLOC[class$Commit==39]
+d<-data.frame(labels=labels,vals=vals)
+d<-d[with(d, order(-vals,labels)),]
+par(mai=c(0.9,1.7,0,0.2))
+barplot(d$vals, horiz=TRUE, names.arg=d$labels, las=1, cex.names=1, col=c("#9BC4E2"), xlab="LLOC")
+```
+
+### CC
+
+```{r Sprint1-CC, echo=FALSE}
+labels <- class$Name[class$Commit==39]
+vals <- class$CC[class$Commit==39]
+d<-data.frame(labels=labels,vals=vals)
+d<-d[with(d, order(-vals,labels)),]
+par(mai=c(0.9,1.7,0,0.2))
+barplot(d$vals, horiz=TRUE, names.arg=d$labels, las=1, cex.names=1, col=c("#8FBC8F"), xlab="CC")
+```
+
+### McCC
+
+```{r Sprint1-McCC, echo=FALSE}
+labels <- files$Name[files$Commit==39]
+vals <- files$McCC[files$Commit==39]
+d<-data.frame(labels=labels,vals=vals)
+d<-d[with(d, order(-vals,labels)),]
+par(mai=c(0.9,1.7,0,0.2))
+barplot(d$vals, horiz=TRUE, names.arg=d$labels, las=1, cex.names=1, col=c("#E3A857"), xlab="McCC")
+```
+
+### LCOM5
+
+```{r Sprint1-LCOM5, echo=FALSE}
+labels <- class$Name[class$Commit==39]
+vals <- class$LCOM5[class$Commit==39]
+par(mai=c(0.9,1.7,0,0.2))
+barplot(d$vals, horiz=TRUE, names.arg=d$labels, las=1, cex.names=1, col=c("#967BB6"), xlab="LCOM5")
+```
+
+### CBO
+
+```{r Sprint1-CBO, echo=FALSE}
+labels <- class$Name[class$Commit==39]
+vals <- class$CBO[class$Commit==39]
+d<-data.frame(labels=labels,vals=vals)
+d<-d[with(d, order(-vals,labels)),]
+par(mai=c(0.9,1.7,0,0.2))
+barplot(d$vals, horiz=TRUE, names.arg=d$labels, las=1, cex.names=1, col=c("#FFC1CC"), xlab="CBO")
+```
+
+## Sprint 2
+
+### LLOC
+
+```{r Sprint2-LLOC, echo=FALSE}
+labels <- class$Name[class$Commit==132]
+vals <- class$LLOC[class$Commit==132]
+d<-data.frame(labels=labels,vals=vals)
+d<-d[with(d, order(-vals,labels)),]
+par(mai=c(0.9,1.7,0,0.2))
+barplot(d$vals, horiz=TRUE, names.arg=d$labels, las=1, cex.names=0.8, col=c("#9BC4E2"), xlab="LLOC")
+```
+
+### CC
+
+```{r Sprint2-CC, echo=FALSE}
+labels <- class$Name[class$Commit==132]
+vals <- class$CC[class$Commit==132]
+d<-data.frame(labels=labels,vals=vals)
+d<-d[with(d, order(-vals,labels)),]
+par(mai=c(0.9,1.7,0,0.2))
+barplot(d$vals, horiz=TRUE, names.arg=d$labels, las=1, cex.names=0.8, col=c("#8FBC8F"), xlab="CC")
+```
+
+### McCC
+
+```{r Sprint2-McCC, echo=FALSE}
+labels <- files$Name[files$Commit==132]
+vals <- files$McCC[files$Commit==132]
+d<-data.frame(labels=labels,vals=vals)
+d<-d[with(d, order(-vals,labels)),]
+par(mai=c(0.9,1.7,0,0.2))
+barplot(d$vals, horiz=TRUE, names.arg=d$labels, las=1, cex.names=0.8, col=c("#E3A857"), xlab="McCC")
+```
+
+### LCOM5
+
+```{r Sprint2-LCOM5, echo=FALSE}
+labels <- class$Name[class$Commit==132]
+vals <- class$LCOM5[class$Commit==132]
+d<-data.frame(labels=labels,vals=vals)
+d<-d[with(d, order(-vals,labels)),]
+par(mai=c(0.9,1.7,0,0.2))
+barplot(d$vals, horiz=TRUE, names.arg=d$labels, las=1, cex.names=0.8, col=c("#967BB6"), xlab="LCOM5")
+```
+
+### CBO
+
+```{r Sprint2-CBO, echo=FALSE}
+labels <- class$Name[class$Commit==132]
+vals <- class$CBO[class$Commit==132]
+d<-data.frame(labels=labels,vals=vals)
+d<-d[with(d, order(-vals,labels)),]
+par(mai=c(0.9,1.7,0,0.2))
+barplot(d$vals, horiz=TRUE, names.arg=d$labels, las=1, cex.names=0.8, col=c("#FFC1CC"), xlab="CBO")
+```
+
+## Sprint 3
+
+### LLOC
+
+```{r Sprint3-LLOC, echo=FALSE}
+labels <- class$Name[class$Commit==201]
+vals <- class$LLOC[class$Commit==201]
+d<-data.frame(labels=labels,vals=vals)
+d<-d[with(d, order(-vals,labels)),]
+par(mai=c(0.9,1.5,0,0.2))
+barplot(d$vals, horiz=TRUE, names.arg=d$labels, las=1, cex.names=0.5, col=c("#9BC4E2"), xlab="LLOC")
+```
+
+### CC
+
+```{r Sprint3-CC, echo=FALSE}
+labels <- class$Name[class$Commit==201]
+vals <- class$CC[class$Commit==201]
+d<-data.frame(labels=labels,vals=vals)
+d<-d[with(d, order(-vals,labels)),]
+par(mai=c(0.9,1.5,0,0.2))
+barplot(d$vals, horiz=TRUE, names.arg=d$labels, las=1, cex.names=0.5, col=c("#8FBC8F"), xlab="CC")
+```
+
+### McCC
+
+```{r Sprint3-McCC, echo=FALSE}
+labels <- files$Name[files$Commit==201]
+vals <- files$McCC[files$Commit==201]
+d<-data.frame(labels=labels,vals=vals)
+d<-d[with(d, order(-vals,labels)),]
+par(mai=c(0.9,1.5,0,0.2))
+barplot(d$vals, horiz=TRUE, names.arg=d$labels, las=1, cex.names=0.5, col=c("#E3A857"), xlab="McCC")
+```
+
+### LCOM5
+
+```{r Sprint3-LCOM5, echo=FALSE}
+labels <- class$Name[class$Commit==201]
+vals <- class$LCOM5[class$Commit==201]
+d<-data.frame(labels=labels,vals=vals)
+d<-d[with(d, order(-vals,labels)),]
+par(mai=c(0.9,1.5,0,0.2))
+barplot(d$vals, horiz=TRUE, names.arg=d$labels, las=1, cex.names=0.5, col=c("#967BB6"), xlab="LCOM5")
+```
+
+### CBO
+
+```{r Sprint3-CBO, echo=FALSE}
+labels <- class$Name[class$Commit==201]
+vals <- class$CBO[class$Commit==201]
+d<-data.frame(labels=labels,vals=vals)
+d<-d[with(d, order(-vals,labels)),]
+par(mai=c(0.9,1.5,0,0.2))
+barplot(d$vals, horiz=TRUE, names.arg=d$labels, las=1, cex.names=0.5, col=c("#FFC1CC"), xlab="CBO")
+```
