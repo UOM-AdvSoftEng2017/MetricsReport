@@ -119,6 +119,8 @@ barplot(d$vals, horiz=TRUE, names.arg=d$labels, las=1, cex.names=1, col=c("#E3A8
 ```{r Sprint1-LCOM5, echo=FALSE}
 labels <- class$Name[class$Commit==39]
 vals <- class$LCOM5[class$Commit==39]
+d<-data.frame(labels=labels,vals=vals)
+d<-d[with(d, order(-vals,labels)),]
 par(mai=c(0.9,1.7,0,0.2))
 barplot(d$vals, horiz=TRUE, names.arg=d$labels, las=1, cex.names=1, col=c("#967BB6"), xlab="LCOM5")
 ```
