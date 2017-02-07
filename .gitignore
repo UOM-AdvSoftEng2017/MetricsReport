@@ -1,0 +1,8 @@
+Metrics.html
+.R*
+figs/*.png
+*.bak
+main.log
+main.out
+MetricsReport.pdf
+1stpage.pdf
